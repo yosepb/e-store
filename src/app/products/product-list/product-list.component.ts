@@ -14,9 +14,14 @@ export class ProductListComponent {
   //   this.title = 'tombol sudah diklik, text berubah';
   // }
 
-  selectedProduct = 'Microphone';
+  // selectedProduct = 'Microphone';
+  selectedProduct = '';
 
   onBuy() {
-    window.alert(`You just bought ${this.selectedProduct}!`);
+    if (this.selectedProduct === '') {
+      window.alert(`Anda belum menekan pilihan barang`);
+    } else {
+      window.alert(`You just bought ${this.selectedProduct}!`);
+    }
   }
 }

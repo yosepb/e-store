@@ -8,5 +8,7 @@ import { Component, OnDestroy } from '@angular/core';
 export class AppComponent implements OnDestroy {
   title = 'e-store';
 
-  ngOnDestroy(): void {}
+  ngOnDestroy(): void {
+    console.log('komponen app destroyed');
+  }
 }
