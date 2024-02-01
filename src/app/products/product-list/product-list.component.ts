@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { ProductDetailComponent } from '../product-detail/product-detail.component';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
 })
-export class ProductListComponent {
+export class ProductListComponent implements AfterViewInit {
   // myText: any;
   // isLiked: any;
 
@@ -15,6 +16,10 @@ export class ProductListComponent {
   // }
 
   // selectedProduct = 'Microphone';
+
+  @ViewChild(ProductDetailComponent)
+  productDetail: ProductDetailComponent = new ProductDetailComponent();
+
   selectedProduct = '';
 
   onBuy() {
@@ -22,6 +27,12 @@ export class ProductListComponent {
       window.alert(`Anda belum menekan pilihan barang`);
     } else {
       window.alert(`You just bought ${this.selectedProduct}!`);
+    }
+  }
+
+  ngAfterViewInit(): void {
+    if (this.productDetail) {
+      console.log('productDetail.names: ' + this.productDetail.names);
     }
   }
 }

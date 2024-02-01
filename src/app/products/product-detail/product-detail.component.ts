@@ -19,6 +19,7 @@ import {
 })
 export class ProductDetailComponent implements OnInit, OnChanges {
   @Input() name = '';
+  names = 's';
   @Output() bought = new EventEmitter<string>();
 
   buy(): void {
@@ -26,7 +27,7 @@ export class ProductDetailComponent implements OnInit, OnChanges {
   }
 
   get productName(): string {
-    console.log(`Get ${this.name}`);
+    console.log(`Gets ${this.name}`);
     return this.name;
   }
 
