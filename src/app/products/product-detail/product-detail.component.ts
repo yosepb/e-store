@@ -21,7 +21,7 @@ export class ProductDetailComponent implements OnInit, OnChanges {
   @Input() name = '';
   @Output() bought = new EventEmitter<string>();
 
-  buy() {
+  buy(): void {
     this.bought.emit(this.name);
   }
 
@@ -38,10 +38,19 @@ export class ProductDetailComponent implements OnInit, OnChanges {
     console.log(`Name is ${this.name} in the constructor`);
   }
 
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   const product = changes['name'];
+  //   const oldValue = product.previousValue;
+  //   const newValue = product.currentValue;
+  //   console.log(`Product changed from ${oldValue} to ${newValue}`);
+  // }
+
   ngOnChanges(changes: SimpleChanges): void {
     const product = changes['name'];
-    const oldValue = product.previousValue;
-    const newValue = product.currentValue;
-    console.log(`Product changed from ${oldValue} to ${newValue}`);
+    if (!product.isFirstChange()) {
+      const oldValue = product.previousValue;
+      const newValue = product.currentValue;
+      console.log(`Product changed from ${oldValue} to ${newValue}`);
+    }
   }
 }
