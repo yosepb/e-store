@@ -8,7 +8,11 @@
 </ul>
 
 <app-product-detail
-  #product
+  *ngIf="selectedProduct; else noProduct"
   [name]="selectedProduct"
   (bought)="onBuy()"
 ></app-product-detail>
+
+<ng-template #noProduct>
+  <p class="mt-4 text-red-600 italic text-center">No product selected!</p>
+</ng-template>

@@ -39,13 +39,6 @@ export class ProductDetailComponent implements OnInit, OnChanges {
     console.log(`Name is ${this.name} in the constructor`);
   }
 
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   const product = changes['name'];
-  //   const oldValue = product.previousValue;
-  //   const newValue = product.currentValue;
-  //   console.log(`Product changed from ${oldValue} to ${newValue}`);
-  // }
-
   ngOnChanges(changes: SimpleChanges): void {
     const product = changes['name'];
     if (!product.isFirstChange()) {
