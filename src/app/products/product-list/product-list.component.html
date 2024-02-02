@@ -1,7 +1,7 @@
 <h2 class="mt-8">Product List</h2>
 <ul class="mt-4 ml-6">
   <li
-    *ngFor="let product of products | slice : 0 : 3; let i = index"
+    *ngFor="let product of products | sort; let i = index"
     (click)="selectedProduct = product"
     class="mt-4"
   >
