@@ -14,6 +14,11 @@ export class ProductListComponent implements AfterViewInit {
 
   products = ['Webcam', 'Microphone', 'Wireless keyboard'];
 
+  trackByProducts(index: number, name: string): string {
+    console.log(index + ' - ' + name);
+    return name;
+  }
+
   onBuy() {
     if (this.selectedProduct === '') {
       window.alert(`Anda belum menekan pilihan barang`);
