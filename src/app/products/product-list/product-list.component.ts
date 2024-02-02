@@ -7,18 +7,8 @@ import { ProductDetailComponent } from '../product-detail/product-detail.compone
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements AfterViewInit {
-  // myText: any;
-  // isLiked: any;
-
-  // title = 'bahtiar';
-  // onClick() {
-  //   this.title = 'tombol sudah diklik, text berubah';
-  // }
-
-  // selectedProduct = 'Microphone';
-
   @ViewChild(ProductDetailComponent)
-  productDetail: ProductDetailComponent = new ProductDetailComponent();
+  productDetail: ProductDetailComponent | undefined;
 
   selectedProduct = '';
 

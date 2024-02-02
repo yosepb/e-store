@@ -1,28 +1,14 @@
-<!-- <p [attr.aria-label]="myText"></p>
-    <p class="star"></p>
-    <p style="color: greenyellow"></p>
-    <p [class.star]="isLiked"></p> -->
-<!-- <span [innerText]="title"></span> <br /> -->
-<!-- <span>{{ title }}</span> <br />
-<button (click)="onClick()" class="rounded-md bg-slate-600 p-3 text-white">
-  Click me
-</button> -->
-<h2>Product List</h2>
-<ul>
-  <li (click)="selectedProduct = 'Webcam'">Webcam</li>
-  <li (click)="selectedProduct = 'Microphone'">Microphone</li>
-  <li (click)="selectedProduct = 'Wireless Keyboard'">Wireless Keyboard</li>
+<h2 class="mt-8">Product List</h2>
+<ul class="mt-4 ml-6">
+  <li (click)="selectedProduct = 'Webcam'" class="mt-4">Webcam</li>
+  <li (click)="selectedProduct = 'Microphone'" class="mt-4">Microphone</li>
+  <li (click)="selectedProduct = 'Wireless Keyboard'" class="mt-4">
+    Wireless Keyboard
+  </li>
 </ul>
-
-<!-- <app-product-detail
-  [name]="selectedProduct"
-  (bought)="onBuy($event)"
-></app-product-detail> -->
 
 <app-product-detail
   #product
   [name]="selectedProduct"
   (bought)="onBuy()"
 ></app-product-detail>
-
-<span>{{ product.name }}</span>

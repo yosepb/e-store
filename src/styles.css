@@ -2,8 +2,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-* {
-  font-family: "Segoe UI";
-  margin: 15px;
-}

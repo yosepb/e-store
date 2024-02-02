@@ -1,6 +1,10 @@
-<h2>Product Details</h2>
-<h3>{{ name }}</h3>
-<span>{{ productName }}</span>
-<button (click)="buy()" class="rounded-md bg-slate-600 p-3 text-white">
-  Buy Now
-</button>
+<div *ngIf="name">
+  <h2 class="mt-8">Product Details</h2>
+  <h3 class="mt-4 ml-6">{{ name }}</h3>
+  <button
+    (click)="buy()"
+    class="mt-4 w-full rounded-md bg-blue-700 p-3 text-white"
+  >
+    Buy Now
+  </button>
+</div>
