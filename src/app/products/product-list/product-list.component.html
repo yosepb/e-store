@@ -1,9 +1,11 @@
 <h2 class="mt-8">Product List</h2>
 <ul class="mt-4 ml-6">
-  <li (click)="selectedProduct = 'Webcam'" class="mt-4">Webcam</li>
-  <li (click)="selectedProduct = 'Microphone'" class="mt-4">Microphone</li>
-  <li (click)="selectedProduct = 'Wireless Keyboard'" class="mt-4">
-    Wireless Keyboard
+  <li
+    *ngFor="let product of products; let i = index"
+    (click)="selectedProduct = product"
+    class="mt-4"
+  >
+    {{ i + 1 }}) {{ product }}
   </li>
 </ul>
 

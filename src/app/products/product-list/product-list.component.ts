@@ -12,6 +12,8 @@ export class ProductListComponent implements AfterViewInit {
 
   selectedProduct = '';
 
+  products = ['Webcam', 'Microphone', 'Wireless keyboard'];
+
   onBuy() {
     if (this.selectedProduct === '') {
       window.alert(`Anda belum menekan pilihan barang`);
