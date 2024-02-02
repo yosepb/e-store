@@ -28,7 +28,7 @@ export class ProductListComponent implements AfterViewInit {
   ];
 
   onBuy() {
-    window.alert('You just bought ${this.selectedProduct?.name}!');
+    window.alert(`You just bought ${this.selectedProduct?.name}!`);
   }
 
   ngAfterViewInit(): void {
