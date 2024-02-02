@@ -1,17 +1,17 @@
 <h2 class="mt-8">Product List</h2>
 <ul class="mt-4 ml-6">
   <li
-    *ngFor="let product of products; trackBy: trackByProducts; let i = index"
+    *ngFor="let product of products | slice : 0 : 3; let i = index"
     (click)="selectedProduct = product"
     class="mt-4"
   >
-    {{ i + 1 }}) {{ product }}
+    {{ i + 1 }}) {{ product.name }} | {{ product | json }}
   </li>
 </ul>
 
 <app-product-detail
   *ngIf="selectedProduct; else noProduct"
-  [name]="selectedProduct"
+  [product]="selectedProduct"
   (bought)="onBuy()"
 ></app-product-detail>
 

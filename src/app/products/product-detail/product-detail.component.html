@@ -1,6 +1,14 @@
-<div *ngIf="name">
+<div *ngIf="product?.name">
   <h2 class="mt-8">Product Details</h2>
-  <h3 class="mt-4 ml-6">{{ name }}</h3>
+  <h3 class="mt-4 ml-6">{{ product?.name }}</h3>
+
+  <div [ngSwitch]="product?.name" class="mt-4 italic">
+    <p *ngSwitchCase="'Webcam'">Product is used for video</p>
+    <p *ngSwitchCase="'Microphone'">Product is used for audio</p>
+    <p *ngSwitchDefault>Product is for general use</p>
+    <p>{{ product?.price | currency : "EUR" }}</p>
+  </div>
+
   <button
     (click)="buy()"
     class="mt-4 w-full rounded-md bg-blue-700 p-3 text-white"
